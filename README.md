@@ -1,5 +1,7 @@
 # Cloudflare Turnstile module for OpenMage/Magento1
 
+Turnstile is Cloudflare's CAPTCHA alternative, read more at https://developers.cloudflare.com/turnstile
+
 Features
 ---------
 - Compatible with **Magento 1.9, OpenMage 19 and OpenMage 20 on PHP >= 7.4**.
@@ -10,7 +12,8 @@ How to use it
   modman (`modman clone https://github.com/fballiano/openmage-cloudflare-turnstile`)
   or any other way you like
 - Configure your Turnstile SITE_KEY/SECRET_KEY in "system -> Configuration -> Admin -> Cloudflare Turnstile"
-- If you want to test the module you can use development keys available at https://developers.cloudflare.com/turnstile/reference/testing/
+- If you want to test the module you can use development keys available at 
+  https://developers.cloudflare.com/turnstile/reference/testing
 
 Backup!!!
 ---------
