@@ -6,7 +6,7 @@ Features
 
 How to use it
 -------------
-- Install via composer (`composer require fballiano/openmage-turnstile`), 
+- Install via composer (`composer require fballiano/openmage-cloudflare-turnstile`), 
   modman (`modman clone https://github.com/fballiano/openmage-cloudflare-turnstile`)
   or any other way you like
 - Configure your Turnstile SITE_KEY/SECRET_KEY in "system -> Configuration -> Admin -> Cloudflare Turnstile"
