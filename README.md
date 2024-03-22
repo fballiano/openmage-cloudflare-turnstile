@@ -1,4 +1,4 @@
-# Cloudflare Turnstile module for OpenMage and Magento 1
+# Cloudflare Turnstile module for OpenMage/Magento1
 
 Features
 ---------
