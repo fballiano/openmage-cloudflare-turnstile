@@ -1,5 +1,5 @@
 {
-  "name": "fballiano/openmage-turnstile",
+  "name": "fballiano/openmage-cloudflare-turnstile",
   "license": "OSL-3.0",
   "type": "magento-module",
   "description": "",
