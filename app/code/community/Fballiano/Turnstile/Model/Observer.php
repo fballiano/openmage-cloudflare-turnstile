@@ -30,13 +30,37 @@ class Fballiano_Turnstile_Model_Observer
         $this->failedVerification($controller);
     }
 
-    protected function failedVerification(Mage_Core_Controller_Front_Action $controller): void
+    public function verifyAjax(Varien_Event_Observer $observer): void
+    {
+        $helper = Mage::helper('fballiano_turnstile');
+        if (!$helper->isEnabled()) {
+            return;
+        }
+
+        /** @var Mage_Core_Controller_Front_Action $controller */
+        $controller = $observer->getControllerAction();
+        $data = $controller->getRequest()->getPost();
+
+        $token = $data['cf-turnstile-response'] ?? '';
+        if ($helper->verify($token)) {
+            return;
+        }
+
+        $this->failedVerification($controller, true);
+    }
+
+    protected function failedVerification(Mage_Core_Controller_Front_Action $controller, bool $isAjax = false): void
     {
         $controller->setFlag('', Mage_Core_Controller_Varien_Action::FLAG_NO_DISPATCH, true);
-        Mage::getSingleton('customer/session')->addError(
-            Mage::helper('fballiano_turnstile')->__('Incorrect CAPTCHA.') //TODO find better translation
-        );
+        $errorMessage = Mage::helper('fballiano_turnstile')->__('Incorrect CAPTCHA.'); //TODO find better translation
 
+        if ($isAjax) {
+            $result = ['error' => 1, 'message' => $errorMessage];
+            $controller->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
+            return;
+        }
+
+        Mage::getSingleton('customer/session')->addError($errorMessage);
         $request = $controller->getRequest();
         $refererUrl = $request->getServer('HTTP_REFERER');
         if ($url = $request->getParam(Mage_Core_Controller_Varien_Action::PARAM_NAME_REFERER_URL)) {

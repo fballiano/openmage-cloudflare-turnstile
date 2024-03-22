@@ -2,7 +2,14 @@
 <layout version="0.1.0">
     <default>
         <reference name="before_body_end">
-            <block type="core/template" template="fballiano_turnstile/turnstile.phtml"></block>
+            <block type="core/template" template="fballiano_turnstile/footer.phtml"></block>
         </reference>
     </default>
+    <checkout_onepage_index>
+        <reference name="checkout.onepage.billing">
+            <reference name="form.additional.info">
+                <block type="core/template" template="fballiano_turnstile/default_checkout.phtml"></block>
+            </reference>
+        </reference>
+    </checkout_onepage_index>
 </layout>

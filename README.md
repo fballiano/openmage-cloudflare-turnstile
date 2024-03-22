@@ -5,7 +5,7 @@ Turnstile is Cloudflare's CAPTCHA alternative, read more at https://developers.c
 Features
 ---------
 - Super easy and non-intrusive implementation, you don't have to modify and block or phtml file 
-- Compatible with **Magento 1.9, OpenMage 19 and OpenMage 20 on PHP >= 7.4**.
+- Compatible with **Magento 1.9, OpenMage 19 and OpenMage 20 on PHP >= 7.4**
 
 How to use it
 -------------

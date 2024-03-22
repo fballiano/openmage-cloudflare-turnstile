@@ -4,12 +4,16 @@ if (!$helper->isEnabled()) return;
 ?><script>
     //TODO: load turnstile script only on demand
     let turnstileRenderedElements = [];
+    function fballiano_turnstile_render(element) {
+        console.log("ciao");
+        if (turnstileRenderedElements.includes(element.id)) return;
+        turnstileRenderedElements.push(element.id);
+        turnstile.render(element, {sitekey: '<?= $helper->getSiteKey() ?>'});
+    }
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('<?= $helper->getFrontendSelectors() ?>').forEach(function (element) {
             element.addEventListener('focusin', function (event) {
-                if (turnstileRenderedElements.includes(element.id)) return;
-                turnstileRenderedElements.push(element.id);
-                turnstile.render(element, {sitekey: '<?= $helper->getSiteKey() ?>'});
+                fballiano_turnstile_render(element);
             });
         });
     });
