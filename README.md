@@ -10,6 +10,7 @@ How to use it
   modman (`modman clone https://github.com/fballiano/openmage-cloudflare-turnstile`)
   or any other way you like
 - Configure your Turnstile SITE_KEY/SECRET_KEY in "system -> Configuration -> Admin -> Cloudflare Turnstile"
+- If you want to test the module you can use development keys available at https://developers.cloudflare.com/turnstile/reference/testing/
 
 Backup!!!
 ---------
