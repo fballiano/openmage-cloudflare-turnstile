@@ -8,7 +8,7 @@ Features
 - Support for customer registration, customer forgot password, newsletter subscribe, 
   checkout (guest/register), product review, wishlist share
 - Easy customization (for theme related changes to the supported forms) via configurable CSS selectors 
-- Compatible with **Magento 1.9, OpenMage 19 and OpenMage 20 on PHP >= 7.4**
+- Compatible with Magento 1.9, OpenMage 19 and OpenMage 20 on PHP >= 7.4
 
 TODO
 - support for backend (login/forgotpassword)
