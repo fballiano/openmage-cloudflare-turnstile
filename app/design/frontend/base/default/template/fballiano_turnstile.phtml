@@ -1,0 +1,17 @@
+<?php
+$helper = Mage::helper('fballiano_turnstile');
+if (!$helper->isEnabled()) return;
+?><script>
+    //TODO: load turnstile script only on demand
+    let turnstileRenderedElements = [];
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('<?= $helper->getFrontendSelectors() ?>').forEach(function (element) {
+            element.addEventListener('focusin', function (event) {
+                if (turnstileRenderedElements.includes(element.id)) return;
+                turnstileRenderedElements.push(element.id);
+                turnstile.render(element, {sitekey: '<?= $helper->getSiteKey() ?>'});
+            });
+        });
+    });
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
