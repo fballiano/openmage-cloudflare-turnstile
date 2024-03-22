@@ -35,14 +35,6 @@
                     </fballiano_turnstile>
                 </observers>
             </controller_action_predispatch_contacts_index_post>
-            <controller_action_predispatch_newsletter_subscriber_new>
-                <observers>
-                    <fballiano_turnstile>
-                        <class>fballiano_turnstile/observer</class>
-                        <method>verify</method>
-                    </fballiano_turnstile>
-                </observers>
-            </controller_action_predispatch_newsletter_subscriber_new>
             <controller_action_predispatch_customer_account_createpost>
                 <observers>
                     <fballiano_turnstile>
@@ -51,6 +43,38 @@
                     </fballiano_turnstile>
                 </observers>
             </controller_action_predispatch_customer_account_createpost>
+            <controller_action_predispatch_customer_account_forgotpasswordpost>
+                <observers>
+                    <fballiano_turnstile>
+                        <class>fballiano_turnstile/observer</class>
+                        <method>verify</method>
+                    </fballiano_turnstile>
+                </observers>
+            </controller_action_predispatch_customer_account_forgotpasswordpost>
+            <controller_action_predispatch_newsletter_subscriber_new>
+                <observers>
+                    <fballiano_turnstile>
+                        <class>fballiano_turnstile/observer</class>
+                        <method>verify</method>
+                    </fballiano_turnstile>
+                </observers>
+            </controller_action_predispatch_newsletter_subscriber_new>
+            <controller_action_predispatch_review_product_post>
+                <observers>
+                    <fballiano_turnstile>
+                        <class>fballiano_turnstile/observer</class>
+                        <method>verify</method>
+                    </fballiano_turnstile>
+                </observers>
+            </controller_action_predispatch_review_product_post>
+            <controller_action_predispatch_wishlist_index_send>
+                <observers>
+                    <fballiano_turnstile>
+                        <class>fballiano_turnstile/observer</class>
+                        <method>verify</method>
+                    </fballiano_turnstile>
+                </observers>
+            </controller_action_predispatch_wishlist_index_send>
         </events>
         <layout>
             <updates>
@@ -67,7 +91,11 @@
                 <selectors>.checkout-onepage-index #billing-new-address-form
 #contactForm
 .customer-account-create #form-validate
-#newsletter-validate-detail</selectors>
+.customer-account-forgotpassword #form-validate
+#newsletter-validate-detail
+.catalog-product-view #review-form
+.review-product-list #review-form
+.wishlist-index-share #form-validate</selectors>
             </fballiano_turnstile>
         </admin>
     </default>

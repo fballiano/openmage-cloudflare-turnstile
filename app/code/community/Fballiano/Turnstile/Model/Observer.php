@@ -52,7 +52,7 @@ class Fballiano_Turnstile_Model_Observer
     protected function failedVerification(Mage_Core_Controller_Front_Action $controller, bool $isAjax = false): void
     {
         $controller->setFlag('', Mage_Core_Controller_Varien_Action::FLAG_NO_DISPATCH, true);
-        $errorMessage = Mage::helper('fballiano_turnstile')->__('Incorrect CAPTCHA.'); //TODO find better translation
+        $errorMessage = Mage::helper('fballiano_turnstile')->__('Incorrect CAPTCHA.');
 
         if ($isAjax) {
             $result = ['error' => 1, 'message' => $errorMessage];
@@ -60,7 +60,7 @@ class Fballiano_Turnstile_Model_Observer
             return;
         }
 
-        Mage::getSingleton('customer/session')->addError($errorMessage);
+        Mage::getSingleton('core/session')->addError($errorMessage);
         $request = $controller->getRequest();
         $refererUrl = $request->getServer('HTTP_REFERER');
         if ($url = $request->getParam(Mage_Core_Controller_Varien_Action::PARAM_NAME_REFERER_URL)) {
