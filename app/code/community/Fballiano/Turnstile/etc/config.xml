@@ -116,14 +116,13 @@
             <fballiano_turnstile>
                 <enable>0</enable>
                 <selectors>.checkout-onepage-index #billing-new-address-form
-                    #contactForm
-                    .customer-account-create #form-validate
-                    .customer-account-forgotpassword #form-validate
-                    #newsletter-validate-detail
-                    .catalog-product-view #review-form
-                    .review-product-list #review-form
-                    .wishlist-index-share #form-validate
-                </selectors>
+.contacts-index-index #contactForm
+.customer-account-create #form-validate
+.customer-account-forgotpassword #form-validate
+#newsletter-validate-detail
+.catalog-product-view #review-form
+.review-product-list #review-form
+.wishlist-index-share #form-validate</selectors>
             </fballiano_turnstile>
         </admin>
     </default>
