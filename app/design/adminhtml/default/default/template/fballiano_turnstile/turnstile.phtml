@@ -1,0 +1,9 @@
+<?php
+$helper = Mage::helper('fballiano_turnstile');
+if (!$helper->isEnabled()) return;
+?><script>
+    fballianoTurnstileLoadCallback = function () {
+        turnstile.render(document.getElementById('loginForm'), {sitekey: '<?= $helper->getSiteKey() ?>'});
+    }
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=fballianoTurnstileLoadCallback" defer></script>

@@ -17,6 +17,33 @@
             </fballiano_turnstile>
         </models>
     </global>
+    <adminhtml>
+        <events>
+            <controller_action_predispatch_adminhtml_index_login>
+                <observers>
+                    <fballiano_turnstile>
+                        <class>fballiano_turnstile/observer</class>
+                        <method>verifyAdmin</method>
+                    </fballiano_turnstile>
+                </observers>
+            </controller_action_predispatch_adminhtml_index_login>
+            <controller_action_predispatch_adminhtml_index_forgotpassword>
+                <observers>
+                    <fballiano_turnstile>
+                        <class>fballiano_turnstile/observer</class>
+                        <method>verifyAdmin</method>
+                    </fballiano_turnstile>
+                </observers>
+            </controller_action_predispatch_adminhtml_index_forgotpassword>
+        </events>
+        <layout>
+            <updates>
+                <fballiano_turnstile>
+                    <file>fballiano_turnstile.xml</file>
+                </fballiano_turnstile>
+            </updates>
+        </layout>
+    </adminhtml>
     <frontend>
         <events>
             <controller_action_predispatch_checkout_onepage_savebilling>
@@ -89,13 +116,14 @@
             <fballiano_turnstile>
                 <enable>0</enable>
                 <selectors>.checkout-onepage-index #billing-new-address-form
-#contactForm
-.customer-account-create #form-validate
-.customer-account-forgotpassword #form-validate
-#newsletter-validate-detail
-.catalog-product-view #review-form
-.review-product-list #review-form
-.wishlist-index-share #form-validate</selectors>
+                    #contactForm
+                    .customer-account-create #form-validate
+                    .customer-account-forgotpassword #form-validate
+                    #newsletter-validate-detail
+                    .catalog-product-view #review-form
+                    .review-product-list #review-form
+                    .wishlist-index-share #form-validate
+                </selectors>
             </fballiano_turnstile>
         </admin>
     </default>

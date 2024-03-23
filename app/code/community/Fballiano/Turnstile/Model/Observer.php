@@ -49,6 +49,31 @@ class Fballiano_Turnstile_Model_Observer
         $this->failedVerification($controller, true);
     }
 
+    public function verifyAdmin(Varien_Event_Observer $observer): void
+    {
+        $helper = Mage::helper('fballiano_turnstile');
+        if (!$helper->isEnabled()) {
+            return;
+        }
+
+        /** @var Mage_Adminhtml_IndexController $controller */
+        $controller = $observer->getControllerAction();
+        $request = $controller->getRequest();
+        if (!$request->isPost()) {
+            return;
+        }
+
+
+
+        $data = $request->getPost();
+        $token = $data['cf-turnstile-response'] ?? '';
+        if ($helper->verify($token)) {
+            return;
+        }
+
+        Mage::throwException(Mage::helper('fballiano_turnstile')->__('Incorrect CAPTCHA.'));
+    }
+
     protected function failedVerification(Mage_Core_Controller_Front_Action $controller, bool $isAjax = false): void
     {
         $controller->setFlag('', Mage_Core_Controller_Varien_Action::FLAG_NO_DISPATCH, true);
