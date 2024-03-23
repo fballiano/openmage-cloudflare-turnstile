@@ -2,20 +2,28 @@
 $helper = Mage::helper('fballiano_turnstile');
 if (!$helper->isEnabled()) return;
 ?><script>
-    //TODO: load turnstile script only on demand
     let turnstileRenderedElements = [];
-    function fballiano_turnstile_render(element) {
-        console.log("ciao");
+    function fballianoTurnstileInject(element) {
         if (turnstileRenderedElements.includes(element.id)) return;
         turnstileRenderedElements.push(element.id);
+
+        if (turnstileRenderedElements.length <= 1) {
+            let script = document.createElement('script');
+            script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=fballianoTurnstileRender';
+            document.head.appendChild(script);
+        } else {
+            fballianoTurnstileRender();
+        }
+    }
+    function fballianoTurnstileRender() {
+        let element = document.getElementById(turnstileRenderedElements[turnstileRenderedElements.length - 1]);
         turnstile.render(element, {sitekey: '<?= $helper->getSiteKey() ?>'});
     }
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('<?= $helper->getFrontendSelectors() ?>').forEach(function (element) {
             element.addEventListener('focusin', function (event) {
-                fballiano_turnstile_render(element);
+                fballianoTurnstileInject(element);
             });
         });
     });
 </script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>

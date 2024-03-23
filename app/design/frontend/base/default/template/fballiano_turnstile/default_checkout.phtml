@@ -3,6 +3,6 @@ $helper = Mage::helper('fballiano_turnstile');
 if (!$helper->isEnabled()) return;
 ?><script>
     document.addEventListener("DOMContentLoaded", function () {
-        fballiano_turnstile_render(document.getElementById('billing-new-address-form'));
+        fballianoTurnstileInject(document.getElementById('billing-new-address-form'));
     });
 </script>

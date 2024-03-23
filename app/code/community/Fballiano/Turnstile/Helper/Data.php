@@ -29,8 +29,8 @@ class Fballiano_Turnstile_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getFrontendSelectors(): string
     {
-        $selectors = Mage::getStoreConfig(self::XML_PATH_FRONTEND_SELECTORS);
-        return preg_replace("/\r\n|\r|\n/", ",", $selectors);
+        $selectors = Mage::getStoreConfig(self::XML_PATH_FRONTEND_SELECTORS) ?? '';
+        return preg_replace("/\r\n|\r|\n/", ",", trim($selectors));
     }
 
     public function verify(string $token, string $IpAddress = null): bool

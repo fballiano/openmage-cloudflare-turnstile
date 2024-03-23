@@ -8,11 +8,9 @@ Features
 - Support for customer registration, customer forgot password, newsletter subscribe, 
   checkout (guest/register), product review, wishlist share
 - Support for admin login and forgot password
-- Easy customization (for theme related changes to the supported forms) via configurable CSS selectors 
+- Easy customization (for theme related changes to the supported forms) via configurable CSS selectors
+- lazy load of Cloudflare's javascript, Google PageSpeed will appreciate
 - Compatible with Magento 1.9, OpenMage 19 and OpenMage 20 on PHP >= 7.4
-
-TODO
-- lazy load for turnstile's javascript file
 
 How to use it
 -------------
