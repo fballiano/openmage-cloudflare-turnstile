@@ -30,7 +30,9 @@ How to use it
 
 What to do if Cloudflare is down and you can't access your store
 -------------
-You'll have to disable the extension completely, you can do it in the database, in the `core_config_data` table, look for records identified by `path='admin/fballiano_turnstile/enable'`, or simply run this query:
+Let's be clear, this case will almost never happen, if it happens half of the world will be down (and probably also other parts of your website) so you can just wait a couple of hours and everything will be back on line, but if you need to, then...
+
+Disable the extension completely, you can do it in the database, in the `core_config_data` table, look for records identified by `path='admin/fballiano_turnstile/enable'`, or simply run this query:
 
 `UPDATE core_config_data SET value=0 WHERE path='admin/fballiano_turnstile/enable'`
 
