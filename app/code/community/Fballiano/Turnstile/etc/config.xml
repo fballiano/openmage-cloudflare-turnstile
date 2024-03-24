@@ -43,6 +43,15 @@
                 </fballiano_turnstile>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <Fballiano_Turnstile>
+                    <files>
+                        <default>Fballiano_Turnstile.csv</default>
+                    </files>
+                </Fballiano_Turnstile>
+            </modules>
+        </translate>
     </adminhtml>
     <frontend>
         <events>
@@ -110,6 +119,15 @@
                 </fballiano_turnstile>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <Fballiano_Turnstile>
+                    <files>
+                        <default>Fballiano_Turnstile.csv</default>
+                    </files>
+                </Fballiano_Turnstile>
+            </modules>
+        </translate>
     </frontend>
     <default>
         <admin>

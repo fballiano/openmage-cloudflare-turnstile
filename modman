@@ -3,4 +3,6 @@ app/design/frontend/base/default/layout/fballiano_turnstile.xml app/design/front
 app/design/frontend/base/default/template/fballiano_turnstile app/design/frontend/base/default/template/fballiano_turnstile
 app/design/adminhtml/default/default/layout/fballiano_turnstile.xml app/design/adminhtml/default/default/layout/fballiano_turnstile.xml
 app/design/adminhtml/default/default/template/fballiano_turnstile app/design/adminhtml/default/default/template/fballiano_turnstile
+app/locale/en_US/Fballiano_Turnstile.csv app/locale/en_US/Fballiano_Turnstile.csv
+app/locale/it_IT/Fballiano_Turnstile.csv app/locale/it_IT/Fballiano_Turnstile.csv
 app/etc/modules/Fballiano_Turnstile.xml app/etc/modules/Fballiano_Turnstile.xml
