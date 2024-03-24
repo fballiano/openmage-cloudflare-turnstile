@@ -28,6 +28,16 @@ How to use it
 - If you want to test the module you can use development keys available at 
   https://developers.cloudflare.com/turnstile/reference/testing
 
+What to do if Cloudflare is down and you can't access your store
+-------------
+You'll have to disable the extension completely, you can do it in the database, in the `core_config_data` table, look for records identified by `path='admin/fballiano_turnstile/enable'`, or simply run this query:
+
+`UPDATE core_config_data SET value=0 WHERE path='admin/fballiano_turnstile/enable'`
+
+Remember that this query will work only if you don't have a "table prefix" in your database, otherwise the name of the core_config_data table will be different in your case.
+
+After modifying the DB, clear magento cache (either deliting everything from the `var/cache` folder, or purging your redis-cache-database or running something like `n98-magerun.phar cache:flush`).
+
 Backup!!!
 ---------
 Backup your database and files before launching the cleaning process!!!
