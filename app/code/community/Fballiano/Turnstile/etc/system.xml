@@ -33,9 +33,9 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                         </secret_key>
-                        <selectors>
+                        <selectors translate="label comment">
                             <label>CSS Selectors</label>
-                            <comment>One per line</comment>
+                            <comment><![CDATA[These CSS selectors are used to identify the forms for which Turnstile will be activated.<br />One selector per line.<br />To disable a selector, type // at the beginning of the line.]]></comment>
                             <frontend_type>textarea</frontend_type>
                             <sort_order>40</sort_order>
                             <show_in_default>1</show_in_default>
