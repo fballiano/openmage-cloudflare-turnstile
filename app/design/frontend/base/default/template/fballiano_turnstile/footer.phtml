@@ -21,6 +21,10 @@ if (!$helper->isEnabled()) return;
     }
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('<?= $helper->getFrontendSelectors() ?>').forEach(function (element) {
+            if (element.matches(':focus-within')) {
+                fballianoTurnstileInject(element);
+                return;
+            }
             element.addEventListener('focusin', function (event) {
                 fballianoTurnstileInject(element);
             });
