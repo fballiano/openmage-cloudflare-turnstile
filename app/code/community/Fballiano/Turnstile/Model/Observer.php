@@ -23,7 +23,7 @@ class Fballiano_Turnstile_Model_Observer
         $data = $controller->getRequest()->getPost();
 
         $token = $data['cf-turnstile-response'] ?? '';
-        if ($helper->verify($token)) {
+        if ($helper->verify((string) $token)) {
             return;
         }
 
@@ -42,7 +42,7 @@ class Fballiano_Turnstile_Model_Observer
         $data = $controller->getRequest()->getPost();
 
         $token = $data['cf-turnstile-response'] ?? '';
-        if ($helper->verify($token)) {
+        if ($helper->verify((string) $token)) {
             return;
         }
 
@@ -67,7 +67,7 @@ class Fballiano_Turnstile_Model_Observer
 
         $data = $request->getPost();
         $token = $data['cf-turnstile-response'] ?? '';
-        if ($helper->verify($token)) {
+        if ($helper->verify((string) $token)) {
             return;
         }
 
