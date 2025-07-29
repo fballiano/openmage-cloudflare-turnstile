@@ -45,7 +45,7 @@ class Fballiano_Turnstile_Helper_Data extends Mage_Core_Helper_Abstract
         return implode(',', $selectorsToKeep);
     }
 
-    public function verify(string $token, string $IpAddress = null): bool
+    public function verify(string $token, ?string $IpAddress = null): bool
     {
         if (!$token) {
             return false;
