@@ -1,0 +1,4 @@
+"CSS Selectors","Seletores CSS"
+"Enable","Habilitar"
+"Incorrect CAPTCHA.","CAPTCHA incorreto."
+"These CSS selectors are used to identify the forms for which Turnstile will be activated.<br />One selector per line.<br />To disable a selector, type // at the beginning of the line.","Esses seletores CSS identificam os formulários nos quais o Turnstile será ativado.<br />Um seletor por linha.<br />Para desabilitar um seletor, digite // no início da linha."
